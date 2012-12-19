@@ -32,7 +32,7 @@ ZSH_THEME="agnoster-rigs"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git per-directory-history jira osx brew sublime virtualenvwrapper)
+plugins=(issh git per-directory-history jira osx brew sublime virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,8 +65,10 @@ if [ -d $HOME/local ]; then
 fi
 
 # Add ssrp-dev if available
-[ -d $HOME/src/vrisys ] && \
+if [ -d $HOME/src/vrisys ]; then
     PATHDIRS=($HOME/src/vrisys/ssrp-dev $PATHDIRS)
+    alias issh.py='issh.py -n'
+fi
 
 export PATH=${(j.:.)PATHDIRS}
 

@@ -35,6 +35,7 @@ ZSH_THEME="agnoster-rigs"
 plugins=(issh git per-directory-history jira osx brew sublime virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
 PATHDIRS=(
     /usr/X11/bin

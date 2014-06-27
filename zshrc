@@ -15,7 +15,7 @@ ZSH_THEME="agnoster-rigs"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -28,14 +28,6 @@ ZSH_THEME="agnoster-rigs"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(issh git per-directory-history jira osx brew sublime virtualenvwrapper)
-
-source $ZSH/oh-my-zsh.sh
-unsetopt correct_all
 
 PATHDIRS=(
     /usr/X11/bin
@@ -65,11 +57,30 @@ if [ -d $HOME/local ]; then
     PATHDIRS=($HOME/local/bin $HOME/local/sbin $PATHDIRS)
 fi
 
+if [ -x $HOME/local/bin/vim ]; then
+    export EDITOR=$HOME/local/bin/vim
+fi
+
+
 # Add ssrp-dev if available
 if [ -d $HOME/src/vrisys ]; then
     PATHDIRS=($HOME/src/vrisys/ssrp-dev $PATHDIRS)
     alias issh.py='issh.py -n'
 fi
 
+# Add golang tools if installed
+if [ -d $HOME/local/go ]; then
+    PATHDIRS=($HOME/local/go/bin $PATHDIRS)
+    export GOROOT=$HOME/local/go
+fi
+
 export PATH=${(j.:.)PATHDIRS}
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(issh git per-directory-history jira osx brew sublime virtualenvwrapper)
+
+source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 

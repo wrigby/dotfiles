@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -37,6 +37,7 @@ PATHDIRS=(
     /opt/java/current/bin
     /opt/local/bin
     /opt/local/sbin
+    /usr/local/share/python
     /usr/local/bin
     /usr/local/sbin
     /usr/sbin
@@ -59,13 +60,6 @@ fi
 
 if [ -x $HOME/local/bin/vim ]; then
     export EDITOR=$HOME/local/bin/vim
-fi
-
-
-# Add ssrp-dev if available
-if [ -d $HOME/src/vrisys ]; then
-    PATHDIRS=($HOME/src/vrisys/ssrp-dev $PATHDIRS)
-    alias issh.py='issh.py -n'
 fi
 
 # Add golang tools if installed

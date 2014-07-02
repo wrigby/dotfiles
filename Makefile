@@ -1,4 +1,4 @@
-TARGETS=zshrc vim vimrc tmux.conf
+TARGETS=zshrc vim vimrc gitconfig tmux.conf
 
 install:
 	for target in $(TARGETS); do \

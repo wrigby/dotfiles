@@ -63,9 +63,10 @@ if [ -x $HOME/local/bin/vim ]; then
 fi
 
 # Add golang tools if installed
-if [ -d $HOME/local/go ]; then
-    PATHDIRS=($HOME/local/go/bin $PATHDIRS)
-    export GOROOT=$HOME/local/go
+if [ -d /usr/local/go ]; then
+    PATHDIRS=(/usr/local/go/bin $PATHDIRS)
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
 fi
 
 export PATH=${(j.:.)PATHDIRS}

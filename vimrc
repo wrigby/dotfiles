@@ -28,7 +28,8 @@ imap jj <Esc>
 "match OverLength /\%81v.\+/
 
 " Turn on powerline
-"set rtp+=/Users/wrigby/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set laststatus=2
+set rtp+=/Users/wrigby/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files

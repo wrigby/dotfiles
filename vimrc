@@ -1,6 +1,9 @@
 " Vundle setup
 set nocompatible   " be iMproved, required
-filetype on       " required
+
+" This is strange, but both of these lines are required.
+" See https://github.com/VundleVim/Vundle.vim/issues/176
+filetype on        " required
 filetype off       " required
 
 " set the runtime path to include Vundle and initialize

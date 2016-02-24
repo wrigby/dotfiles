@@ -41,9 +41,9 @@ set hlsearch
 map <silent> <C-n> <Esc>:nohl<CR>
 imap jj <Esc>
 
-" Highlight lines over 80 chars
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
+" Highlight lines over 100 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%101v.\+/
 
 " Make Powerline visible
 set laststatus=2

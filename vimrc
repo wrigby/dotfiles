@@ -9,8 +9,10 @@ filetype off       " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'ctrlpvim/ctrlp.vim'
+
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

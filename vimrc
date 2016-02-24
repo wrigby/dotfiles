@@ -10,6 +10,7 @@ filetype off       " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,9 +45,8 @@ imap jj <Esc>
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
-" Turn on powerline
+" Make Powerline visible
 set laststatus=2
-set rtp+=/Users/wrigby/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files

@@ -1,3 +1,17 @@
+" Vundle setup
+set nocompatible   " be iMproved, required
+filetype on       " required
+filetype off       " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'ctrlpvim/ctrlp.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Normal Vim setup as usual
 set tabstop=4
 set shiftwidth=4
 set expandtab

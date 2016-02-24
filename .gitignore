@@ -1,5 +1,5 @@
 /vim/.netrwhist
 
-
-/vim/bundle/*.vim
+# Ignore Vundle-managed Vim plugins
+/vim/bundle/*
 !/vim/bundle/Vundle.vim

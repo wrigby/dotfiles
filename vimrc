@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,6 +47,10 @@ imap jj <Esc>
 " Highlight lines over 100 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%101v.\+/
+
+" Highlight trailing whitespace
+highlight TrailingWhitespace ctermbg=red ctermfg=white guibg=#592929
+match TrailingWhitespace /\S\@<=\s\+$/
 
 " Make Powerline visible
 set laststatus=2

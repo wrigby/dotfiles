@@ -29,6 +29,7 @@ export DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+CDPATHDIRS=()
 PATHDIRS=(
     /usr/X11/bin
     /opt/vista/bin
@@ -64,9 +65,21 @@ fi
 
 # Add golang tools if installed
 if [ -d /usr/local/go ]; then
-    PATHDIRS=(/usr/local/go/bin $PATHDIRS)
     export GOROOT=/usr/local/go
     export GOPATH=$HOME/go
+
+    PATHDIRS=(/usr/local/go/bin $GOPATH/bin $PATHDIRS)
+    CDPATHDIRS=($GOPATH/src/github.com)
+fi
+
+# Add local Python path on OS X
+if [ -d $HOME/Library/Python/2.7/bin ]; then
+    PATHDIRS=($HOME/Library/Python/2.7/bin $PATHDIRS)
+fi
+
+# Add Homebrew-installed GNU Coreutils if available
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
+    PATHDIRS=(/usr/local/opt/coreutils/libexec/gnubin $PATHDIRS)
 fi
 
 export PATH=${(j.:.)PATHDIRS}
@@ -74,8 +87,16 @@ export PATH=${(j.:.)PATHDIRS}
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(issh git per-directory-history osx brew sublime virtualenvwrapper)
+plugins=(git osx brew sublime virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+# Cleanup stupid aliases
+unalias gb
+
+# Pager options
+export LESS="-x5,9 -FRSX"
+
+# CD Path for great awesome
+export CDPATH=${(j.:.)CDPATHDIRS}

@@ -14,6 +14,11 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
+Plugin 'elzr/vim-json'
+
+Plugin 'dcharbon/vim-flatbuffers'
+
+Bundle 'uarun/vim-protobuf'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,6 +48,10 @@ syntax on
 set hlsearch
 map <silent> <C-n> <Esc>:nohl<CR>
 imap jj <Esc>
+
+" No more accidental ex-mode when trying to exit
+map q: <Nop>
+nnoremap Q <nop>
 
 " Highlight lines over 100 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929

@@ -5,7 +5,7 @@ install:
         if [ -e $(HOME)/.$$target ] ; then \
             mv $(HOME)/.$$target $(HOME)/.$$target.backup ; \
         fi ; \
-		ln -s `pwd`/$$target $(HOME)/.$$target ; \
+		ln -fs `pwd`/$$target $(HOME)/.$$target ; \
 	done
 	
 
